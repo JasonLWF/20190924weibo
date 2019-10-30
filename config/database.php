@@ -17,7 +17,7 @@ return [
     |
     */
 
-    'default' => $db_config['connection'],
+    'default' => getenv('IS_IN_HEROKU') ? 'pgsql' : env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -68,11 +68,11 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' => $db_config['host'],
+            'host' => 'ec2-54-83-9-169.compute-1.amazonaws.com',
             'port' => env('DB_PORT', '5432'),
-            'database' => $db_config['database'],
-            'username' => $db_config['username'],
-            'password' => $db_config['password'],
+            'database' => 'dc0pf0vsttqhes',
+            'username' => 'rcctwrxivrtwyf',
+            'password' => '056c6690f37fc2730fe8b4317229747f37da93a3b792dcb4ffcfd7e5e3a90f26',
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,

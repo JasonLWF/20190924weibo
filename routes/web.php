@@ -19,6 +19,8 @@ Route::get('/signup', 'UsersController@create')->name('signup');
 Route::resource('users', 'UsersController');
 Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
 Route::get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');
+Route::get('/users/{user}/followings', 'UsersController@followings')->name('users.followings');
+Route::get('/users/{user}/followers', 'UsersController@followers')->name('users.followers');
 
 Route::get('/login', 'SessionsController@create')->name('login');
 Route::post('/login', 'SessionsController@store')->name('login');
